@@ -1,0 +1,13 @@
+<view wx:if="{{!request_fail}}" class='wrap'>
+    <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
+        <navigator wx:for="{{arr_res}}" wx:key="key" url="{{url}}?title={{item.title}}">
+            <view class="main">
+                <image class="img" src="{{item.albums[0]}}" />
+                <view class="text">
+                    <text class="title">{{item.title}}</text>
+                    <text class="subtitle">{{item.burden}}</text>
+                </view>
+            </view>
+        </navigator>
+    </scroll-view>
+</view>

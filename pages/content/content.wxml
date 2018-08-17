@@ -1,0 +1,24 @@
+<view class="view-request-fail" wx:if="{{request_fail}}">
+    <text class="text-request-fail">网络或服务器错误，请检查网络...</text>
+</view>
+<view class="main">
+    <view class="head">
+        <image class="img" mode="aspectFill" src="{{arr_res.albums[0]}}" />
+        <view class="title-view">
+            <text class="title">{{title}}</text>
+        </view>
+    </view>
+    <view class="text">
+        <text class="title-keywords">功效</text>
+        <text class="keywords">{{arr_res.imtro}}</text>
+        <view class="line" />
+        <text class="title-keywords">食材</text>
+        <text class="keywords">{{arr_res.burden}}</text>
+        <view class="line" />
+        <text class="title-detail">制作步骤</text>
+        <view wx:for="{{arr_res.steps}}" wx:key="key" class='step'>
+          <text class='stepTitle'>{{item.step}}</text>
+          <image class='stepImg' src="{{item.img}}"></image>
+        </view>
+    </view>
+</view>
